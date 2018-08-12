@@ -13,7 +13,7 @@ That said, you have been warned and it will probably kill your CPU unless you pi
 Currently this gem is not published. You will have to clone and install using a local copy:
 
 ```shell
-git clone git@gitlab.com:chriskaukis/bacon_number.git
+git clone https://gitlab.com/chriskaukis/bacon_number.git
 cd bacon_number
 rake install
 ```
