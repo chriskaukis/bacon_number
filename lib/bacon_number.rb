@@ -16,7 +16,8 @@ module BaconNumber
       item = queue.shift
       item.children.each do |child|
         next if visited[child.url.to_s]
-        return child if child.url.to_s == tgt
+        # return child if child.url.to_s == tgt
+        return { separations: child.separations, via: child.parent.url.to_s } if child.url.to_s == tgt
         queue << child
         visited[child.url.to_s] = child
       end

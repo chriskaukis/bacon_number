@@ -1,43 +1,40 @@
-# BaconNumber
+# Bacon Number
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/bacon_number`. To experiment with that code, run `bin/console` for an interactive prompt.
+A Ruby gem to calculate the number links between two Wikipedia pages (Defaulting to Kevin Bacon of course).
 
-TODO: Delete this and the text above, and describe your gem
+## Introduction
+
+This is an initial hacked together version of what I think is a very cool and interesting simple gem. This version uses screen scraping to parse all the links and find a path to the target page URL. After thinking a little more about this idea I realized it could probably be done given a URL to parse the title and use the Wikipedia JSON API. Making this much faster and easier.
+
+That said, you have been warned and it will probably kill your CPU unless you pick some obvious use cases.
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Currently this gem is not published. You will have to clone and install using a local copy:
 
-```ruby
-gem 'bacon_number'
+```shell
+git clone git@gitlab.com:chriskaukis/bacon_number.git
+cd bacon_number
+rake install
 ```
 
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install bacon_number
-
 ## Usage
+Require it and go. Since it is scraping the actual page it will return the first result found.
 
-TODO: Write usage instructions here
+```ruby
+require 'bacon_number
+BaconNumber.separations('https://en.wikipedia.org/wiki/Tom_Cruise')
+=> {:separations=>2, :via=>"https://en.wikipedia.org/wiki/Dustin_Hoffman"}
+```
 
-## Development
+## Notes
+Due to time constraints this initial version doesn't have a good (or any) tests setup.
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake test` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+## Todo
+* Tests
+* Convert to using the Wikipedia JSON API or alternatively
+* Graphical representation of the path(s) taken to the target
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+## Requirements
 
-## Contributing
-
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/bacon_number. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
-
-## License
-
-The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
-
-## Code of Conduct
-
-Everyone interacting in the BaconNumber project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/bacon_number/blob/master/CODE_OF_CONDUCT.md).
+* Ruby (developed using 2.5.1)
