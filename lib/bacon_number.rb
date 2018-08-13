@@ -8,8 +8,8 @@ module BaconNumber
   KEVIN_BACON = 'https://en.wikipedia.org/wiki/Kevin_Bacon'
 
   def self.separations(src, tgt = KEVIN_BACON)
+    return 0 if src == tgt
     page = BaconNumber::Page.new(src)
-    return page if src == tgt
     queue = [page]
     visited = { page.url.to_s => page }
     while !queue.empty?
