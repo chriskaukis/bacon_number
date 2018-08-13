@@ -18,7 +18,7 @@ module BaconNumber
         next if visited[child.url.to_s]
         # Only return an integer of the results for now.
         # return { separations: child.separations, via: child.parent.url.to_s } if child.url.to_s == tgt
-        return child.separations
+        return child.separations if child.url.to_s == tgt
         queue << child
         visited[child.url.to_s] = child
       end
