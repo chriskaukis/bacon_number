@@ -32,8 +32,10 @@ Due to time constraints this initial version doesn't have a good (or any) tests 
 
 ## Todo
 * Tests
-* Convert to using the Wikipedia JSON API or alternatively
+* Convert to using the Wikipedia JSON API or in addition to
 * Graphical representation of the path(s) taken to the target
+* Error handling
+* Command line interface
 
 ## Requirements
 
