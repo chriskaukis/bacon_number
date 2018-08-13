@@ -22,9 +22,9 @@ rake install
 Require it and go. Since it is scraping the actual page it will return the first result found.
 
 ```ruby
-require 'bacon_number
+require 'bacon_number'
 BaconNumber.separations('https://en.wikipedia.org/wiki/Tom_Cruise')
-=> {:separations=>2, :via=>"https://en.wikipedia.org/wiki/Dustin_Hoffman"}
+=> 2
 ```
 
 ## Notes
